@@ -1,0 +1,26 @@
+{
+  "name": "h8-pp-p1",
+  "version": "1.0.0",
+  "description": "Hacktiv8 pair project phase 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyonizr/h8-pp-p1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vyonizr/h8-pp-p1/issues"
+  },
+  "homepage": "https://github.com/vyonizr/h8-pp-p1#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pg": "^7.8.1",
+    "sequelize": "^4.42.0"
+  }
+}
