@@ -38,6 +38,13 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  Consumer.prototype.formatMMDDYYYY = function(){
+    return (this.getMonth() + 1) + 
+    "/" +  this.getDate() +
+    "/" +  this.getFullYear();
+  }
+
   Consumer.associate = function(models) {
     // associations can be defined here
     Consumer.belongsToMany(models.Studio, {through: models.Booking})

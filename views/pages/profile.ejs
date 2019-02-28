@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>profile</title>
+  <title><%= consumerData.username %> | Dashboard </title>
 </head>
 <body>
-  <h1>Booking history</h1>
+  <h2><%= consumerData.full_name %></h2>
+  <h3>Booking history</h3>
 
   <table border = 1>
       <tr>
@@ -15,11 +16,11 @@
           <th>Booking Date</th>
           <th>Options</th>
       </tr>
-        <% consumerData.forEach( element => { %>
+        <% consumerData.Studios.forEach(studio => { %>
       <tr>
-        <td><%= element.StudioId %></td>   
-        <td> </td>
-        <td> <a href = "" > EDIT </a> | <a href = "" > Cancel Booking </a></td>
+        <td><%= studio.name %></td>
+        <td><%= studio.Booking.book_date.toLocaleDateString() %></td>
+        <td><a href="" > Reschedule </a> | <a href="/profile/<%= consumerData.id %>/delete/<%= studio.Booking.id %>" onclick="return confirm('Are you sure want to cancel this booking?\nMake sure you have read our terms and Policy')"> Cancel Booking </a></td>
       </tr>
       <% }) %>
   </table>
