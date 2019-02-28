@@ -1,8 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const StudioEquipment = sequelize.define('StudioEquipment', {
-    EquipmentId: DataTypes.INTEGER,
-    StudioID: DataTypes.INTEGER
+    StudioID: DataTypes.INTEGER,
+    EquipmentId: DataTypes.INTEGER
   }, {});
   StudioEquipment.associate = function(models) {
     // associations can be defined here
