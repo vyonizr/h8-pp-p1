@@ -17,17 +17,11 @@ router.post("/", (req, res) => {
     }
   })
   .then(foundConsumer => {
-    if (foundConsumer !== null) {
-      if(bcrypt.compareSync(req.body.password, foundConsumer.password)) {
-        req.session.foundConsumer = foundConsumer.id
-        res.redirect("/")
-      }
-      else {
-        throw new Error ("Wrong password")
-      }
+    if(foundConsumer !== null && bcrypt.compareSync(req.body.password, foundConsumer.password)) {
+      res.redirect(`/profile/${foundConsumer.id}`)
     }
     else {
-      throw new Error ("User does not exist")
+      throw new Error ("wrong username / password")
     }
   })
   .catch(err => {
