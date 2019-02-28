@@ -31,8 +31,7 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: true,
         unique: true
       }
-    },
-    gender: DataTypes.ENUM("male", "female")
+    }
   }, {
     hooks: {
       beforeCreate(consumer, options) {
