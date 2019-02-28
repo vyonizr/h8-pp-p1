@@ -14,9 +14,11 @@ router.get('/:consumerid', (req, res) => {
       }]
   })
   .then((data) => {
-    consumerData = data
-    console.log(models.Studio)
-    return models.Studio
+    // consumerData = data
+    res.send(data)
+    res.render('../views/pages/profile', {
+      consumerData : data
+    })
   })
 })
 
