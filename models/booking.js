@@ -1,7 +1,8 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
-    studio: DataTypes.STRING,
+    studioId: DataTypes.INTEGER,
+    consumerId:DataTypes.INTEGER,
     book_date: DataTypes.DATE
   }, {});
   Booking.associate = function(models) {

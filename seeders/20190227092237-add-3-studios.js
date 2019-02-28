@@ -6,6 +6,7 @@ module.exports = {
       name: "727 Studios",
       location: "Kebayoran Lama",
       daily_rate: 270,
+      image: "https://i.imgur.com/FgNUDjx.jpg",
       createdAt: new Date(),
       updatedAt: new Date()
     }])
@@ -14,6 +15,7 @@ module.exports = {
         name: "Stand Up Sound",
         location: "Kebon Jeruk",
         daily_rate: 342,
+        image: "https://i.imgur.com/pS9iyyw.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       }])
@@ -23,6 +25,7 @@ module.exports = {
         name: "Subdecibel",
         location: "Kebayoran Lama",
         daily_rate: 540,
+        image: "https://i.imgur.com/w9dLxFx.jpg",
         createdAt: new Date(),
         updatedAt: new Date()
       }])
