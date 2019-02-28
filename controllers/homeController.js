@@ -1,9 +1,9 @@
 class HomeController {
-    static getPage(req, res) {
-        res.render('../views/pages/home.ejs'), {
-            message : "EZjam Studio"
-        }
+  static getPage(req, res) {
+    res.render('../views/pages/home.ejs'), {
+        message : "EZjam Studio"
     }
+  }
 }
 
 module.exports = HomeController

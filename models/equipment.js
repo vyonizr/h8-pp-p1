@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Equipment.associate = function(models) {
     // associations can be defined here
+    Equipment.belongsToMany(models.Studio, {through: StudioEquipMent})
   };
   return Equipment;
 };
