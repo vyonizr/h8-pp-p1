@@ -4,21 +4,11 @@ const models = require('../models')
 
 // Consumer
 router.get('/:consumerid', (req, res) => {
-  // res.send(req.params.consumerid)
-  let consumerData;
-  console.log('masuk')
-  models.Consumer.findAll({
-      where : { id : req.params.consumerid },
-      include : [{
-          model : models.Booking
-      }]
+  models.Booking.findAll({
+    where : { consumerId : req.params.consumerId }
   })
   .then((data) => {
-    // consumerData = data
-    res.send(data)
-    res.render('../views/pages/profile', {
-      consumerData : data
-    })
+  res.send(data)
   })
 })
 

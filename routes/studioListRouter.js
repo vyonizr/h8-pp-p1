@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   Studio.findAll()
   .then(studios => {
     res.render('pages/studioList', {
-      studios: studios
+      Studios: Studios
     })
   })
   .catch(err => {
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.post("/:studioId/book", (req, res) => {
   Model.Booking.create({
-    studioId: req.params.studioId,
+    StudioId: req.params.StudioId,
     consumerId: 1,
     book_date: req.body.bookDate
   })
