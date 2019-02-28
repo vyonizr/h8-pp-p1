@@ -8,14 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      studio: {
-        type: Sequelize.STRING
+      consumerId: {
+        type: Sequelize.INTEGER
+      },
+      studioId: {
+        type: Sequelize.INTEGER
       },
       book_date: {
         type: Sequelize.DATE
-      },
-      consumer: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
