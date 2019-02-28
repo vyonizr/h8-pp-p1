@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 
 router.post("/:studioId/book", (req, res) => {
   Model.Booking.create({
-    StudioId: req.params.StudioId,
-    consumerId: 1,
+    StudioId: req.params.studioId,
+    ConsumerId: 1,
     book_date: req.body.bookDate
   })
   .then(() => {

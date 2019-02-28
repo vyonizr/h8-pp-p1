@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       notNull: true,
       notEmpty: true
     },
-    consumerId: {
+    ConsumerId: {
       type: DataTypes.INTEGER,
       notNull: true,
       notEmpty: true
