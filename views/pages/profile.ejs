@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>profile</title>
+</head>
+<body>
+  <h1>Hi Customer this is your booking history</h1>
+  <h3>Booking History</h3>
+  <table border = 1>
+      <tr>
+          <th>Customer Id</th>
+          <th>Booking Id</th>
+          <th>Booking Date</th>
+          <th>Options</th>
+        </tr>
+        <% booking.forEach( element => { %>
+          <tr>
+              <td></td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+        <% }) %>
+  </table>
+</body>
+</html>
