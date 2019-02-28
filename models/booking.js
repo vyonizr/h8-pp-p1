@@ -1,12 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
-    studioId: {
+    StudioId: {
       type: DataTypes.INTEGER,
       notNull: true,
       notEmpty: true
     },
-    consumerId: {
+    ConsumerId: {
       type: DataTypes.INTEGER,
       notNull: true,
       notEmpty: true
