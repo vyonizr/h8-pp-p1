@@ -7,26 +7,21 @@
   <title>profile</title>
 </head>
 <body>
-  <h1>Hi Customer this is your booking history</h1>
-  <h3>Booking History</h3>
+  <h1>Booking history</h1>
+
   <table border = 1>
       <tr>
           <th>Booked Studio</th>
           <th>Booking Date</th>
           <th>Options</th>
-        </tr>
-        <% consumerData.forEach( element => { %>
-          <tr>
-              <td> <%= element. %> </td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-        <% }) %>
+      </tr>
+        <% consumerData.Booking.forEach( element => { %>
+      <tr>
+        <td><%= element.StudioId %></td>   
+        <td> </td>
+        <td> <a href = "" > EDIT </a> | <a href = "" > Cancel Booking </a></td>
+      </tr>
+      <% }) %>
   </table>
 </body>
 </html>
