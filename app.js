@@ -19,11 +19,12 @@ const indexRouter = require('./routes/index')
 const loginRouter = require('./routes/loginRouter')
 const registerRouter = require('./routes/registerRouter')
 const studioListRouter = require("./routes/studioListRouter")
+const profileRouter = require("./routes/profileRouter")
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter)
 app.use('/register', registerRouter)
 app.use("/studios", studioListRouter)
-
+app.use("/profile", profileRouter)
 
 app.listen(3000)

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>profile</title>
+</head>
+<body>
+  <h1>Booking history</h1>
+
+  <table border = 1>
+      <tr>
+          <th>Booked Studio</th>
+          <th>Booking Date</th>
+          <th>Options</th>
+      </tr>
+        <% consumerData.Booking.forEach( element => { %>
+      <tr>
+        <td><%= element.StudioId %></td>   
+        <td> </td>
+        <td> <a href = "" > EDIT </a> | <a href = "" > Cancel Booking </a></td>
+      </tr>
+      <% }) %>
+  </table>
+</body>
+</html>
