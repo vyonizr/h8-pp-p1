@@ -17,9 +17,9 @@ router.get('/', (req, res) => {
 
 router.post("/:studioId/book", (req, res) => {
   Model.Booking.create({
-    studio: req.params.studioId,
-    book_date: req.body.bookDate,
-    consumer: 1
+    studioId: req.params.studioId,
+    consumerId: 1,
+    book_date: req.body.bookDate
   })
   .then(() => {
     res.redirect("/studios")

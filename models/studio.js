@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Studio.associate = function(models) {
     // associations can be defined here
+    Studio.belongsToMany(models.Consumer, {through: models.Booking})
     Studio.belongsToMany(models.Equipment, {through: models.StudioEquipment})
   };
   return Studio;
