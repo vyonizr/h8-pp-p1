@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
   Studio.findAll()
   .then(studios => {
     res.render('pages/studioList', {
-      studios: studios
+      Studios: Studios
     })
   })
   .catch(err => {
