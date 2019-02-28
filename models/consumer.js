@@ -1,5 +1,6 @@
 'use strict';
 const bcrypt = require("bcryptjs")
+const salt = bcrypt.genSaltSync(10);
 // const fixNameCase = require("../helpers/fixNameCase")
 
 module.exports = (sequelize, DataTypes) => {
@@ -33,13 +34,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     hooks: {
       beforeCreate(consumer, options) {
-        // consumer.full_name = fixNameCase(consumer.full_name)
+        consumer.password = bcrypt.hashSync(consumer.password, salt);
       }
     }
   });
   Consumer.associate = function(models) {
     // associations can be defined here
-    Consumer.hasMany(models.Booking)
+    Consumer.belongsToMany(models.Studio, {through: models.Booking})
   };
   return Consumer;
 };

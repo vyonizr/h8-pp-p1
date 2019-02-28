@@ -1,13 +1,24 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
-    studioId: DataTypes.INTEGER,
-    consumerId:DataTypes.INTEGER,
-    book_date: DataTypes.DATE
+    studioId: {
+      type: DataTypes.INTEGER,
+      notNull: true,
+      notEmpty: true
+    },
+    consumerId: {
+      type: DataTypes.INTEGER,
+      notNull: true,
+      notEmpty: true
+    },
+    book_date: {
+      type: DataTypes.DATE,
+      notNull: true,
+      notEmpty: true
+    }
   }, {});
   Booking.associate = function(models) {
     // associations can be defined here
-    Booking.belongsTo(models.Consumer)
   };
   return Booking;
 };
