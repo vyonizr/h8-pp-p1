@@ -5,10 +5,16 @@ const models = require('../models')
 // Consumer
 router.get('/:consumerid', (req, res) => {
   models.Booking.findAll({
-    where : { consumerId : req.params.consumerId }
+    where : { ConsumerId : req.params.consumerid }
   })
   .then((data) => {
-  res.send(data)
+    res.send(data)
+    res.render('pages/profile', {
+      consumerData : data
+    })
+  })
+  .catch((err) => {
+    console.log(err)
   })
 })
 
