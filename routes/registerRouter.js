@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const models = require('../models')
+const Consumer = models.Consumer
 
 //RENDER HOMEPAGE
 router.get('/', (req, res) => {
@@ -8,17 +9,17 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  models.Consumer.create({
+  Consumer.create({
     username : req.body.username,
-    full_name : req.body.full_name,
+    full_name : req.body.fullName,
     password : req.body.password,
-    email : req.body.email,
-    gender : req.body.gender 
+    email : req.body.email
   })
   .then(() => {
     res.redirect('/')
   })
   .catch(err => {
+    console.log(err)
     res.send(err)
   })
 })

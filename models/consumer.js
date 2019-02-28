@@ -1,6 +1,6 @@
 'use strict';
 const bcrypt = require("bcryptjs")
-const fixNameCase = require("../helpers/fixNameCase")
+// const fixNameCase = require("../helpers/fixNameCase")
 
 module.exports = (sequelize, DataTypes) => {
   const Consumer = sequelize.define('Consumer', {
@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: true,
-        unique: true,
         isOneWord(value) {
           var regexp = /^\S*$/
           if(!regexp.test(value)) {
@@ -28,15 +27,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: true,
-        isEmail: true,
-        unique: true
+        isEmail: true
       }
     }
   }, {
     hooks: {
       beforeCreate(consumer, options) {
-        consumer.full_name = fixNameCase(full_name)
-        consumer.gender = consumer.gender.toLowerCase()
+        // consumer.full_name = fixNameCase(consumer.full_name)
       }
     }
   });
