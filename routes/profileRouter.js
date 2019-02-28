@@ -2,17 +2,18 @@ const express = require('express')
 const router = express.Router()
 const models = require('../models')
 
-router
-
-router.get('/profile/:consumerid', (req, res) => {
+// Consumer
+router.get('/:consumerid', (req, res) => {
+  // res.send(req.params.consumerid)
   models.Consumer.findOne({
-      where : { id : req.params.id },
+      where : { id : req.params.consumerid },
       include : [{
           model : models.Booking
       }]
   })
   .then((data) => {
-    res.render('/pages/profile', {
+    res.send(data)
+    res.render('/profile', {
       consumerData : data
     })
   })
@@ -54,7 +55,6 @@ router.post('/profile/:consumerid', (req, res) => {
         console.log(err)
     })
 })
-
 
 // DELETE BOOKING
 router.get('/profile/:consumerid', (req, res) => {
