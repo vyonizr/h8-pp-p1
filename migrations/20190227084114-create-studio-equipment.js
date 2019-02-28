@@ -8,10 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      EquipmentId: {
+      StudioId: {
         type: Sequelize.INTEGER
       },
-      StudioID: {
+      EquipmentId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
