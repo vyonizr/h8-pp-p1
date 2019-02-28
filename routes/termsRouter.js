@@ -3,6 +3,5 @@ const router = express.Router()
 const models = require('../models')
 
 router.get('/', (req, res) => {
-  res.render('pages/studioRouter')
+  res.render('pages/termsAndCondition')
 })
-
