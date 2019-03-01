@@ -30,54 +30,39 @@ router.get("/:consumerId/delete/:bookingId", (req, res) => {
   .then(() => {
     res.redirect(`/profile/${req.params.consumerId}`)
   })
+  .catch(err => {
+    res.send(err)
+  })
 })
 
-// // EDIT BOOKING GET
-// let bookingData = ''
-// router.get('/:consumerid', (req, res) => {
-//     models.booking.findByPk(req.params.id)
-//     .then(data => {
-//         bookingData = data
-//         // return models.findAll()
-//     })
-//     .then(() => {
-//         res.render('profile', {
-//             output : studentData,
-//             subject : subjectName 
-//         })
-//     })
-// })
+router.get("/:consumerId/edit/:bookingId", (req, res) => {
+  models.Booking.findByPk(req.params.bookingId)
+  .then(foundBooking => {
+      console.log(foundBooking.book_date);
+    res.render("pages/profile/editSchedule", {
+      bookDate: foundBooking.book_date,
+      consumerId: req.params.consumerId,
+      bookingId: req.params.bookingId
+    })
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
 
-// // EDIT BOOKING POST
-// router.post('/:consumerid', (req, res) => {
-//     models.Booking.update({
-//         studio : req.body.studio,
-//         bookingDate : req.body.bookingDate,
-//     }, {
-//         where : {
-//             id : req.params.id
-//         }
-//     })
-//     .then(() => {
-//         res.redirect('/profile')
-//     })
-//     .catch((err) => {
-//         console.log(err)
-//     })
-// })
-
-// DELETE BOOKING
-router.get('/:consumerid', (req, res) => {
-  models.Booking.destroy({
-      where: { 
-          id : req.params.id 
-      }  
+router.post("/:consumerId/edit/:bookingId", (req, res) => {
+  models.Booking.update({
+    book_date: req.body.bookDate
+  }, {
+    where: {
+      id: req.params.bookingId
+    }
   })
   .then(() => {
-      res.redirect('/profile')
+    res.redirect(`/profile/${req.params.consumerId}`)
   })
-  .catch(err => {
-    console.log(err)
+  .catch((err) => {
+    res.send(err)
   })
 })
 

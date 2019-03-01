@@ -5,28 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>Studios</title>
+  <title>EZJam | Studios</title>
 </head>
 <body>
   <table border="1">
-    <thead>
+    <thead style="font-size:1.5rem">
       <tr>
-        <td>Studio</td>
-        <td>Location</td>
-        <td>Daily Rate</td>
-        <td>Option</td>
+        <th>Studio</th>
+        <th>Location</th>
+        <th>Daily Rate</th>
+        <th>Option</th>
       </tr>
     </thead>
     <tbody>
       <% for (let studio of studios) { %>
-        <tr>
-          <td><%= studio.name %><br><img src="<%= studio.image %>" style="max-height: 250px; max-width: 250px;"></img>
+        <tr style="font-size:1.2rem">
+          <td><strong ><%= studio.name %></strong><br><img src="<%= studio.image %>" style="max-height: 250px; max-width: 250px;"></img>
           </td>
           <td><%= studio.location %></td>
           <td>$ <%= studio.daily_rate%></td>
           <form method="POST" action="/studios/<%= studio.id %>/book">
             <td>
-              <input type="date" name="bookDate"><br>
+              <input type="date" name="bookDate">
               <button type="submit">Book</button>
             </td>
           </form>

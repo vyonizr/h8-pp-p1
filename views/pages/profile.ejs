@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
-  <title>profile</title>
+  <title>EZJam | dDashboard</title>
 </head>
 <body>
   <h2><%= consumerData.full_name %></h2>
@@ -21,7 +21,7 @@
       <tr>
         <td><%= studio.name %></td>
         <td><%= studio.Booking.book_date.toLocaleDateString() %></td>
-        <td><a href="" > Reschedule </a> | <a href="/profile/<%= consumerData.id %>/delete/<%= studio.Booking.id %>" onclick="return confirm('Are you sure want to cancel this booking?\nMake sure you have read our terms and Policy')"> Cancel Booking </a></td>
+        <td><a href="/profile/<%= consumerData.id %>/edit/<%= studio.Booking.id %>" > Reschedule </a> | <a href="/profile/<%= consumerData.id %>/delete/<%= studio.Booking.id %>" onclick="return confirm('Are you sure want to cancel this booking?\nMake sure you have read our terms and Policy')"> Cancel Booking </a></td>
       </tr>
       <% }) %>
   </table>
