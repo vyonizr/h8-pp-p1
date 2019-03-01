@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <% include ../partials/style %>
+  <!-- <% include ../partials/style %> -->
+  <link rel="stylesheet" href="/navHome.css">
   <title>profile</title>
 </head>
 <body>
-  <h2><%= consumerData.full_name %></h2>
-  <h3>Booking history</h3>
+  <nav><% include ../partials/navbar-profile %></nav>
+  <h2>Hi, <%= consumerData.full_name %>. This is your Booking History</h2>
+  <!-- <h3>Booking history</h3> -->
 
   <table border = 1>
       <tr>
