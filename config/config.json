@@ -14,10 +14,10 @@
     "dialect": "postgres"
   },
     "production": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "ezjam_database",
-    "host": "127.0.0.1",
+    "username": "cqvuieoyvfsaxd",
+    "password": "f4d6250b8b9d9a2d54e79b5aa0b2ff89988cb507462d9b2a92dff4c2085a0ef4",
+    "database": "d56kg275akb1uf",
+    "host": "ec2-54-227-246-152.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
