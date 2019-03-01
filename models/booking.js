@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Booking = sequelize.define('Booking', {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
     StudioId: {
       type: DataTypes.INTEGER,

@@ -5,16 +5,13 @@ const routes = require("./routes")
 const session = require('express-session')
 const port = process.env.PORT || 3000
 
-const sess = {
-  key: 'user_sid',
-  secret: '343ji43j4n3jn4jk3n',
-  cookie: {}
-}
+const sess = { secret: 'keyboard cat', cookie: { maxAge: 60000 }}
 app.set("view engine", "ejs")
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('css'))
-// app.use(session(sess))
+app.use(session(sess))
+console.log(session);
 
 const indexRouter = require('./routes/index')
 const loginRouter = require('./routes/loginRouter')

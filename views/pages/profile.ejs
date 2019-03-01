@@ -6,10 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- <% include ../partials/style %> -->
   <link rel="stylesheet" href="/navHome.css">
-  <title>profile</title>
+  <title>EZJam | Dashboard</title>
 </head>
 <body>
-  <nav><% include ../partials/navbar-profile %></nav>
+  <nav>
+    <div class="topnav">
+      <a class="active" href='/profile/<%= consumerData.id %>/studios'>Book Studios</a>
+    </div>
+  </nav>
   <h2>Hi, <%= consumerData.full_name %>. This is your Booking History</h2>
   <!-- <h3>Booking history</h3> -->
 
@@ -23,7 +27,7 @@
       <tr>
         <td><%= studio.name %></td>
         <td><%= studio.Booking.book_date.toLocaleDateString() %></td>
-        <td><a href="" > Reschedule </a> | <a href="/profile/<%= consumerData.id %>/delete/<%= studio.Booking.id %>" onclick="return confirm('Are you sure want to cancel this booking?\nMake sure you have read our terms and Policy')"> Cancel Booking </a></td>
+        <td><a href="/profile/<%= consumerData.id %>/edit/<%= studio.Booking.id %>" > Reschedule </a> | <a href="/profile/<%= consumerData.id %>/delete/<%= studio.Booking.id %>" onclick="return confirm('Are you sure want to cancel this booking?\nMake sure you have read our terms and Policy')"> Cancel Booking </a></td>
       </tr>
       <% }) %>
   </table>
