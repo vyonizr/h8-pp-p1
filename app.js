@@ -27,11 +27,6 @@ app.use("/studios", studioListRouter)
 app.use("/profile", profileRouter)
 app.use("/terms", termsRouter)
 
-<<<<<<< HEAD
-app.listen(3000)
-module.exports = session
-=======
 app.listen(port, () => {
   console.log(`Server Starts on ${port}`)
 })
->>>>>>> 6d5a4694766843b85305254bd49b79efbe2dd1d1
