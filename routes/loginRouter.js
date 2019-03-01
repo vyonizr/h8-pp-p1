@@ -29,8 +29,5 @@ router.post("/", (req, res) => {
   })
 })
 
-router.get("/:consumerId/edit/:bookingId", (req, res) => {
-  
-})
 
 module.exports = router

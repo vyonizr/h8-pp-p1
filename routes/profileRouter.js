@@ -11,7 +11,7 @@ router.get('/:consumerid', (req, res) => {
     }],
   })
   .then((foundConsumer) => {
-    // res.send(foundConsumer[0])
+    // res.send(foundConsumer)
     res.render('pages/profile', {
       consumerData : foundConsumer[0]
     })
@@ -38,7 +38,6 @@ router.get("/:consumerId/delete/:bookingId", (req, res) => {
 router.get("/:consumerId/edit/:bookingId", (req, res) => {
   models.Booking.findByPk(req.params.bookingId)
   .then(foundBooking => {
-      console.log(foundBooking.book_date);
     res.render("pages/profile/editSchedule", {
       bookDate: foundBooking.book_date,
       consumerId: req.params.consumerId,
@@ -60,6 +59,30 @@ router.post("/:consumerId/edit/:bookingId", (req, res) => {
   })
   .then(() => {
     res.redirect(`/profile/${req.params.consumerId}`)
+  })
+  .catch((err) => {
+    res.send(err)
+  })
+})
+
+router.get("/:consumerId/studios", (req, res) => {
+  models.Studio.findAll()
+  .then(studios => {
+    res.render("pages/studioList", {
+      studios: studios,
+      consumerId: req.params.consumerId
+    })
+  })
+})
+
+router.post("/:consumerId/studios", (req, res) => {
+  models.Booking.create({
+    ConsumerId: req.params.consumerId,
+    StudioId: req.body.studioId,
+    book_date: req.body.bookDate
+  })
+  .then(() => {
+    res.send(`/profile/${req.params.consumerId}`)
   })
   .catch((err) => {
     res.send(err)

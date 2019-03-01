@@ -9,7 +9,11 @@
   <title>EZJam | Dashboard</title>
 </head>
 <body>
-  <nav><% include ../partials/navbar-profile %></nav>
+  <nav>
+    <div class="topnav">
+      <a class="active" href='/profile/<%= consumerData.id %>/studios'>Book Studios</a>
+    </div>
+  </nav>
   <h2>Hi, <%= consumerData.full_name %>. This is your Booking History</h2>
   <!-- <h3>Booking history</h3> -->
 
